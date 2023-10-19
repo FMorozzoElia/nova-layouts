@@ -1,0 +1,871 @@
+<!doctype html>
+<html class="h-full bg-white">
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="./dist/img/favicon.png">
+  <link href="dist/css/style.css" rel="stylesheet">
+  <!--<link href="staticwebassets/css/nova.css" rel="stylesheet">-->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="h-full overflow-hidden">
+
+
+  <div class="flex h-full" x-data="{showMobileMenu : false}">
+    <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+    <div class="relative z-40 lg:hidden" x-show="showMobileMenu" role="dialog" aria-modal="true">
+      <!--
+        Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+  
+        Entering: "transition-opacity ease-linear duration-300"
+          From: "opacity-0"
+          To: "opacity-100"
+        Leaving: "transition-opacity ease-linear duration-300"
+          From: "opacity-100"
+          To: "opacity-0"
+      -->
+      <div class="fixed inset-0 bg-gray-100 bg-opacity-75"></div>
+
+      <div class="fixed inset-0 z-40 flex">
+        <!--
+          Off-canvas menu, show/hide based on off-canvas menu state.
+  
+          Entering: "transition ease-in-out duration-300 transform"
+            From: "-translate-x-full"
+            To: "translate-x-0"
+          Leaving: "transition ease-in-out duration-300 transform"
+            From: "translate-x-0"
+            To: "-translate-x-full"
+        -->
+        <div class="relative flex w-full max-w-xs flex-1 flex-col bg-white focus:outline-none">
+          <!--
+            Close button, show/hide based on off-canvas menu state.
+  
+            Entering: "ease-in-out duration-300"
+              From: "opacity-0"
+              To: "opacity-100"
+            Leaving: "ease-in-out duration-300"
+              From: "opacity-100"
+              To: "opacity-0"
+          -->
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button type="button" x-on:click="showMobileMenu=false"
+              class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-200">
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x-mark -->
+              <svg class="h-6 w-6 text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="h-0 flex-1 overflow-y-auto pt-5 pb-4">
+            <div class="flex flex-shrink-0 items-center px-4">
+              <svg class="h-8 w-8 text-orange-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.35694 7.0709L8.42708 11.6952C8.81724 12.0516 9.3625 12.2279 9.87505 12.0971C10.6142 11.91 11.085 11.2246 11.026 10.495L10.3541 2L8.62785 3.25103L9.1823 9.74769C9.19038 9.83683 9.08239 9.88977 9.01701 9.82872L4.90196 5.95121L3.35694 7.0709Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M15.142 2.7374L12.3476 9.00824C12.1321 9.49097 12.136 10.0646 12.4209 10.5108C12.8303 11.1547 13.628 11.3872 14.3014 11.1021L22.147 7.7974L20.4188 6.54906L14.4316 9.11497C14.3496 9.15062 14.2655 9.06458 14.3029 8.98327L16.6888 3.85468L15.142 2.7374Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M14.4028 16.4063L15.8249 23.1237L13.9176 23.1304L12.8358 17.5774C12.8183 17.4896 12.6998 17.4695 12.6544 17.5466L9.31802 23.1464L7.18697 23.1538L11.5927 15.8626C11.9701 15.2357 12.7519 14.9541 13.4612 15.234C13.9536 15.4273 14.2937 15.889 14.4028 16.4063Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M3.6699 19.6032L9.62326 16.1936C10.0819 15.9314 10.417 15.4661 10.4502 14.9376C10.4995 14.1759 9.99272 13.5167 9.28111 13.3488L1 11.3786L1.65869 13.4077L8.00421 14.8757C8.09143 14.8954 8.10856 15.0145 8.03044 15.0581L3.08037 17.7871L3.6699 19.6032Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M16.1816 11.895L23 12.6373L22.4114 14.4537L16.8042 13.7507C16.7155 13.74 16.6594 13.8465 16.7184 13.9137L20.9921 18.8339L20.3345 20.8633L14.7892 14.3984C14.3119 13.8439 14.2885 13.0124 14.7754 12.425C15.1123 12.0168 15.6566 11.8374 16.1816 11.895Z"
+                  fill="currentColor"></path>
+              </svg> <span class="text-xl text-gray-800 font-medium pl-2">Boilerplate</span>
+            </div>
+            <nav aria-label="Sidebar" class="mt-5">
+              <div class="space-y-1 px-2">
+                <!-- Active: "bg-primary-50 text-primary-500", Default: "text-gray-800 hover:bg-gray-50" -->
+                <a href="#"
+                  class="bg-primary-50 text-primary-500 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                  aria-current="page">
+                  <!--
+                    Active: "text-primary-400", Default: "text-gray-400"
+                  -->
+                  <svg class="text-primary-400 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                  </svg>
+                  Home
+                </a>
+
+                <a href="projects.html"
+                  class="text-gray-800 hover:bg-gray-50 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <svg class="text-gray-400 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="4" y="4" width="6" height="6" rx="1" />
+                    <rect x="14" y="4" width="6" height="6" rx="1" />
+                    <rect x="4" y="14" width="6" height="6" rx="1" />
+                    <path d="M14 17h6m-3 -3v6" />
+                  </svg>
+                  Projects
+                </a>
+
+                <a href="table.html"
+                  class="text-gray-800 hover:bg-gray-50 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <svg class="text-gray-400 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <line x1="4" y1="10" x2="20" y2="10" />
+                    <line x1="10" y1="4" x2="10" y2="20" />
+                  </svg>
+                  Table
+                </a>
+
+                <a href="charts.html"
+                  class="text-gray-800 hover:bg-gray-50 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <svg class="text-gray-400 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="3" y="4" width="18" height="12" rx="1" />
+                    <path d="M7 20h10" />
+                    <path d="M9 16v4" />
+                    <path d="M15 16v4" />
+                    <path d="M9 12v-4" />
+                    <path d="M12 12v-1" />
+                    <path d="M15 12v-2" />
+                    <path d="M12 12v-1" />
+                  </svg>
+                  Charts
+                </a>
+
+                <a href="icons.html"
+                  class="text-gray-800 hover:bg-gray-50 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <svg class="text-gray-400 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 3l-4 7h8z" />
+                    <circle cx="17" cy="17" r="3" />
+                    <rect x="4" y="14" width="6" height="6" rx="1" />
+                  </svg>
+                  Icons
+                </a>
+
+              </div>
+              <hr class="my-5 border-t border-gray-100" aria-hidden="true">
+              <div class="space-y-1 px-2">
+
+                <a href="settings.html"
+                  class="group flex items-center rounded-md px-2 py-2 text-base font-medium text-gray-800 hover:bg-gray-50">
+
+                  <svg class="text-gray-400 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  Settings
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="flex flex-shrink-0 border-t border-gray-100 p-4">
+            <a href="#" class="group block flex-shrink-0">
+              <div class="flex items-center">
+                <div>
+                  <img class="inline-block h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt="">
+                </div>
+                <div class="ml-3">
+                  <p class="text-base font-medium text-gray-800 group-hover:text-gray-900">Tom Cook</p>
+                  <p class="text-sm font-medium text-gray-400 group-hover:text-gray-700">View profile</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-14 flex-shrink-0" aria-hidden="true">
+          <!-- Force sidebar to shrink to fit close icon -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Static sidebar for desktop -->
+    <div class="hidden lg:flex lg:flex-shrink-0">
+      <div class="flex w-64 flex-col">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+        <div class="flex min-h-0 flex-1 flex-col border-r border-gray-100 bg-">
+          <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
+            <div class="flex flex-shrink-0 items-center px-4">
+              <svg class="h-8 w-8 text-orange-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.35694 7.0709L8.42708 11.6952C8.81724 12.0516 9.3625 12.2279 9.87505 12.0971C10.6142 11.91 11.085 11.2246 11.026 10.495L10.3541 2L8.62785 3.25103L9.1823 9.74769C9.19038 9.83683 9.08239 9.88977 9.01701 9.82872L4.90196 5.95121L3.35694 7.0709Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M15.142 2.7374L12.3476 9.00824C12.1321 9.49097 12.136 10.0646 12.4209 10.5108C12.8303 11.1547 13.628 11.3872 14.3014 11.1021L22.147 7.7974L20.4188 6.54906L14.4316 9.11497C14.3496 9.15062 14.2655 9.06458 14.3029 8.98327L16.6888 3.85468L15.142 2.7374Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M14.4028 16.4063L15.8249 23.1237L13.9176 23.1304L12.8358 17.5774C12.8183 17.4896 12.6998 17.4695 12.6544 17.5466L9.31802 23.1464L7.18697 23.1538L11.5927 15.8626C11.9701 15.2357 12.7519 14.9541 13.4612 15.234C13.9536 15.4273 14.2937 15.889 14.4028 16.4063Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M3.6699 19.6032L9.62326 16.1936C10.0819 15.9314 10.417 15.4661 10.4502 14.9376C10.4995 14.1759 9.99272 13.5167 9.28111 13.3488L1 11.3786L1.65869 13.4077L8.00421 14.8757C8.09143 14.8954 8.10856 15.0145 8.03044 15.0581L3.08037 17.7871L3.6699 19.6032Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M16.1816 11.895L23 12.6373L22.4114 14.4537L16.8042 13.7507C16.7155 13.74 16.6594 13.8465 16.7184 13.9137L20.9921 18.8339L20.3345 20.8633L14.7892 14.3984C14.3119 13.8439 14.2885 13.0124 14.7754 12.425C15.1123 12.0168 15.6566 11.8374 16.1816 11.895Z"
+                  fill="currentColor"></path>
+              </svg> <span class="text-xl text-gray-800 font-medium pl-2">Boilerplate</span>
+            </div>
+            <nav class="mt-5 flex-1" aria-label="Sidebar">
+              <div class="space-y-1 px-2">
+                <!-- Active: "bg-primary-50 text-primary-500", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-800" -->
+                <a href="home.html"
+                  class="bg-primary-50 text-primary-500 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                  aria-current="page">
+                  <!--
+                    Active: "text-primary-400", Default: "text-gray-400"
+                  -->
+                  <svg class="text-primary-400 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                  </svg>
+                  Home
+                </a>
+
+                <a href="projects.html"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-800 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <svg class="text-gray-400 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="4" y="4" width="6" height="6" rx="1" />
+                    <rect x="14" y="4" width="6" height="6" rx="1" />
+                    <rect x="4" y="14" width="6" height="6" rx="1" />
+                    <path d="M14 17h6m-3 -3v6" />
+                  </svg>
+                  Projects
+                </a>
+
+                <a href="table.html"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-800 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <svg class="text-gray-400 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <line x1="4" y1="10" x2="20" y2="10" />
+                    <line x1="10" y1="4" x2="10" y2="20" />
+                  </svg>
+                  Table
+                </a>
+
+                <a href="charts.html"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-800 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <svg class="text-gray-400 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="3" y="4" width="18" height="12" rx="1" />
+                    <path d="M7 20h10" />
+                    <path d="M9 16v4" />
+                    <path d="M15 16v4" />
+                    <path d="M9 12v-4" />
+                    <path d="M12 12v-1" />
+                    <path d="M15 12v-2" />
+                    <path d="M12 12v-1" />
+                  </svg>
+                  Charts
+                </a>
+
+                <a href="icons.html"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-800 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <svg class="text-gray-400 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 3l-4 7h8z" />
+                    <circle cx="17" cy="17" r="3" />
+                    <rect x="4" y="14" width="6" height="6" rx="1" />
+                  </svg>
+                  Icons
+                </a>
+              </div>
+              <hr class="my-5 border-t border-gray-100" aria-hidden="true">
+              <div class="flex-1 space-y-1 px-2">
+
+
+                <a href="settings.html"
+                  class="group flex items-center rounded-md px-2 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-800">
+                  <svg class="mr-3 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  Settings
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="flex flex-shrink-0 border-t border-gray-100 p-4">
+            <a href="#" class="group block w-full flex-shrink-0">
+              <div class="flex items-center">
+                <div>
+                  <img class="inline-block h-9 w-9 rounded-full"
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt="">
+                </div>
+                <div class="ml-3">
+                  <p class="text-sm font-medium text-gray-800 group-hover:text-gray-900">Tom Cook</p>
+                  <p class="text-xs font-medium text-gray-400 group-hover:text-gray-700">View profile</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
+      <div class="lg:hidden">
+        <div class="flex items-center justify-between border-b border-gray-100 bg-gray-50 px-4 py-1.5">
+          <div>
+            <svg class="h-8 w-8 text-orange-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.35694 7.0709L8.42708 11.6952C8.81724 12.0516 9.3625 12.2279 9.87505 12.0971C10.6142 11.91 11.085 11.2246 11.026 10.495L10.3541 2L8.62785 3.25103L9.1823 9.74769C9.19038 9.83683 9.08239 9.88977 9.01701 9.82872L4.90196 5.95121L3.35694 7.0709Z"
+                fill="currentColor"></path>
+              <path
+                d="M15.142 2.7374L12.3476 9.00824C12.1321 9.49097 12.136 10.0646 12.4209 10.5108C12.8303 11.1547 13.628 11.3872 14.3014 11.1021L22.147 7.7974L20.4188 6.54906L14.4316 9.11497C14.3496 9.15062 14.2655 9.06458 14.3029 8.98327L16.6888 3.85468L15.142 2.7374Z"
+                fill="currentColor"></path>
+              <path
+                d="M14.4028 16.4063L15.8249 23.1237L13.9176 23.1304L12.8358 17.5774C12.8183 17.4896 12.6998 17.4695 12.6544 17.5466L9.31802 23.1464L7.18697 23.1538L11.5927 15.8626C11.9701 15.2357 12.7519 14.9541 13.4612 15.234C13.9536 15.4273 14.2937 15.889 14.4028 16.4063Z"
+                fill="currentColor"></path>
+              <path
+                d="M3.6699 19.6032L9.62326 16.1936C10.0819 15.9314 10.417 15.4661 10.4502 14.9376C10.4995 14.1759 9.99272 13.5167 9.28111 13.3488L1 11.3786L1.65869 13.4077L8.00421 14.8757C8.09143 14.8954 8.10856 15.0145 8.03044 15.0581L3.08037 17.7871L3.6699 19.6032Z"
+                fill="currentColor"></path>
+              <path
+                d="M16.1816 11.895L23 12.6373L22.4114 14.4537L16.8042 13.7507C16.7155 13.74 16.6594 13.8465 16.7184 13.9137L20.9921 18.8339L20.3345 20.8633L14.7892 14.3984C14.3119 13.8439 14.2885 13.0124 14.7754 12.425C15.1123 12.0168 15.6566 11.8374 16.1816 11.895Z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+          <div>
+            <button type="button" x-on:click="showMobileMenu=true"
+              class="-mr-3 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-600">
+              <span class="sr-only">Open sidebar</span>
+              <!-- Heroicon name: outline/bars-3 -->
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="relative z-0 flex flex-1 overflow-hidden">
+        <main class="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
+
+
+          <div class="bg-white relative overflow-hidden">
+
+            <div class="bg-gray-800 pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
+              <div class="mx-auto max-w-7xl lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                  <div
+                    class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
+                    <div class="lg:py-24">
+                      <h1
+                        class="mt-4 text-4xl font-bold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                        <span class="block">HTML Boilerplate</span>
+                        <span
+                          class="block bg-gradient-to-r from-amber-200 to-orange-400 bg-clip-text pb-3 text-transparent sm:pb-5">For
+                          Elia Group hackathon</span>
+                      </h1>
+                      <p class="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">This little website is the
+                        boilerplate itself. So feel free to rework the code as you please.</p>
+
+                    </div>
+                  </div>
+                  <div class="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
+                    <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+                      <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
+                      <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                        src="https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature section with grid -->
+          <div class="relative bg-white py-16 sm:py-24 lg:py-32">
+            <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+              <h2 class="text-lg font-semibold text-orange-600">Ressources</h2>
+              <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">Everything you need to
+                build your Webapp</p>
+              <p class="mx-auto mt-5 max-w-prose text-xl text-gray-400">We give you some tools to help your team to
+                build faster a working prototype for the Elia's Group hackathon. You will find below ressources for
+                designers and developpers.</p>
+              <div class="mt-12">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                            <svg class="h-6 w-6 text-white" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M3.35694 7.0709L8.42708 11.6952C8.81724 12.0516 9.3625 12.2279 9.87505 12.0971C10.6142 11.91 11.085 11.2246 11.026 10.495L10.3541 2L8.62785 3.25103L9.1823 9.74769C9.19038 9.83683 9.08239 9.88977 9.01701 9.82872L4.90196 5.95121L3.35694 7.0709Z"
+                                fill="white" />
+                              <path
+                                d="M15.142 2.7374L12.3476 9.00824C12.1321 9.49097 12.136 10.0646 12.4209 10.5108C12.8303 11.1547 13.628 11.3872 14.3014 11.1021L22.147 7.7974L20.4188 6.54906L14.4316 9.11497C14.3496 9.15062 14.2655 9.06458 14.3029 8.98327L16.6888 3.85468L15.142 2.7374Z"
+                                fill="white" />
+                              <path
+                                d="M14.4028 16.4063L15.8249 23.1237L13.9176 23.1304L12.8358 17.5774C12.8183 17.4896 12.6998 17.4695 12.6544 17.5466L9.31802 23.1464L7.18697 23.1538L11.5927 15.8626C11.9701 15.2357 12.7519 14.9541 13.4612 15.234C13.9536 15.4273 14.2937 15.889 14.4028 16.4063Z"
+                                fill="white" />
+                              <path
+                                d="M3.6699 19.6032L9.62326 16.1936C10.0819 15.9314 10.417 15.4661 10.4502 14.9376C10.4995 14.1759 9.99272 13.5167 9.28111 13.3488L1 11.3786L1.65869 13.4077L8.00421 14.8757C8.09143 14.8954 8.10856 15.0145 8.03044 15.0581L3.08037 17.7871L3.6699 19.6032Z"
+                                fill="white" />
+                              <path
+                                d="M16.1816 11.895L23 12.6373L22.4114 14.4537L16.8042 13.7507C16.7155 13.74 16.6594 13.8465 16.7184 13.9137L20.9921 18.8339L20.3345 20.8633L14.7892 14.3984C14.3119 13.8439 14.2885 13.0124 14.7754 12.425C15.1123 12.0168 15.6566 11.8374 16.1816 11.895Z"
+                                fill="white" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Nova Design System</h3>
+                        <p class="mt-5 text-base text-gray-400">
+                          Nova is a design system created by Elia Group to empower and inspire everyone to create
+                          consistent digital products (for designers and developers).
+                          <br /><a class="text-primary-500 underline" href="https://nova.eliagroup.io/"
+                            target="_blank">Nova Design System</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                              class="h-6 w-6 text-white icon icon-tabler icon-tabler-file-code" width="24" height="24"
+                              viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round"
+                              stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                              <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                              <path d="M10 13l-1 2l1 2" />
+                              <path d="M14 13l1 2l-1 2" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Blazor Components library
+                        </h3>
+                        <p class="mt-5 text-base text-gray-400">
+                          The Nova components library has been published in a nugget package working for
+                          <strong>Blazor</strong> with <strong>.Net 6</strong>
+                          <br><a class="text-primary-500 underline" href="https://github.com/eliagroup/nova-core"
+                            target="_blank">Nova Core for Blazor</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-components" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 12l3 3l3 -3l-3 -3z" />
+                            <path d="M15 12l3 3l3 -3l-3 -3z" />
+                            <path d="M9 6l3 3l3 -3l-3 -3z" />
+                            <path d="M9 18l3 3l3 -3l-3 -3z" />
+                          </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Figma Components library
+                        </h3>
+                        <p class="mt-5 text-base text-gray-400">Nova Library is available for designers in Figma.
+                          You will also find a Figma file for this boilerplate site.
+                          <br><a class="text-primary-500 underline" href="https://www.figma.com/@eliagroupdesign"
+                            target="_blank">Nova Design Files</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg  bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                            <img class="h-5 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white"
+                              alt="tailwindCSS">
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">CSS Framework</h3>
+                        <p class="mt-5 text-base text-gray-400">
+                          This boilerplate website has been created with tailwindCSS. A CSS framework, if you need
+                          more information please go to: <br />
+                          <a class="text-primary-500 underline" href="https://tailwindcss.com/"
+                            target="_blank">tailwindCSS</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                            <svg class="h-6 w-6 text-white" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M8.5 3V2C7.94772 2 7.5 2.44772 7.5 3H8.5ZM15.5 3H16.5C16.5 2.44772 16.0523 2 15.5 2V3ZM8.5 8H7.5C7.5 8.55228 7.94772 9 8.5 9V8ZM15.5 8V9C16.0523 9 16.5 8.55228 16.5 8H15.5ZM3 12V11C2.44772 11 2 11.4477 2 12H3ZM8 12H9C9 11.4477 8.55228 11 8 11V12ZM3 21H2C2 21.5523 2.44772 22 3 22V21ZM21 21V22C21.5523 22 22 21.5523 22 21H21ZM21 12H22C22 11.4477 21.5523 11 21 11V12ZM16 12V11C15.4477 11 15 11.4477 15 12H16ZM16 16.5V17.5C16.5523 17.5 17 17.0523 17 16.5H16ZM8 16.5H7C7 17.0523 7.44772 17.5 8 17.5V16.5ZM8.5 4H15.5V2H8.5V4ZM9.5 8V3H7.5V8H9.5ZM15.5 7H8.5V9H15.5V7ZM14.5 3V8H16.5V3H14.5ZM3 13H8V11H3V13ZM4 21V12H2V21H4ZM21 20H3V22H21V20ZM20 12V21H22V12H20ZM16 13H21V11H16V13ZM17 16.5V12H15V16.5H17ZM8 17.5H16V15.5H8V17.5ZM7 12V16.5H9V12H7Z"
+                                fill="white" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Images Library</h3>
+                        <p class="mt-5 text-base text-gray-400">
+                          Unsplash images library is free to use and has a plugin to work with Figma.
+                          <br /><a class="text-primary-500 underline" href="https://unsplash.com/"
+                            target="_blank">unsplash.com</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                            <svg class="h-6 w-6 text-white" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.41421 2.58579C5.63317 1.80474 4.36684 1.80474 3.58579 2.58579C2.80474 3.36684 2.80474 4.63317 3.58579 5.41421L10.1716 12L3.58579 18.5858C2.80474 19.3668 2.80474 20.6332 3.58579 21.4142C4.36684 22.1953 5.63317 22.1953 6.41421 21.4142L14.4142 13.4142C15.1953 12.6332 15.1953 11.3668 14.4142 10.5858L6.41421 2.58579ZM14 17C13.4477 17 13 17.4477 13 18C13 18.5523 13.4477 19 14 19H20C20.5523 19 21 18.5523 21 18C21 17.4477 20.5523 17 20 17H14Z"
+                                fill="white" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Free Icons</h3>
+                        <p class="mt-5 text-base text-gray-400">Tablericons is a free icon library you can use by
+                          copying the svg code and pasting in your Figma project or directly in your code.
+                          <br /><a class="text-primary-500 underline" href="https://tablericons.com">tablericons.com</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white icon icon-tabler icon-tabler-file-code" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a0.9 .9 0 0 0 -1 -.8" />
+                            <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5" />
+                          </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Chart component library
+                        </h3>
+                        <p class="mt-5 text-base text-gray-400">
+                          The Highcharts library comes with all the tools you need to create reliable and secure data visualizations. 
+                          <br><a class="text-primary-500 underline" href="https://www.highcharts.com/"
+                            target="_blank">highcharts.js</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                              class="h-6 w-6 text-white icon icon-tabler icon-tabler-file-code" width="24" height="24"
+                              viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round"
+                              stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                              <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                              <path d="M10 13l-1 2l1 2" />
+                              <path d="M14 13l1 2l-1 2" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Boilerplate HTML Files
+                        </h3>
+                        <p class="mt-5 text-base text-gray-400">
+                          Here are the HTML files of this boilerplate site. It's plain HTML using tailwindCSS. Check the readme to configure it properly. 
+                          <br><a class="text-primary-500 underline" href="../ressources/hackathon-boilerplate-main.zip"
+                            target="_blank">html boilerplate files</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="pt-6">
+                    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+                      <div class="-mt-6">
+                        <div class="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-amber-500 to-orange-600 p-3 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                              class="h-6 w-6 text-white icon icon-tabler icon-tabler-brand-figma" width="24" height="24"
+                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                              stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <circle cx="15" cy="12" r="3" />
+                              <rect x="6" y="3" width="12" height="6" rx="3" />
+                              <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-800">Boilerplate in Figma
+                        </h3>
+                        <p class="mt-5 text-base text-gray-400">
+                          Here you will find the design file in Figma for this boilerplate site. It uses our Nova Design System components library. 
+                          <br><a class="text-primary-500 underline" href="../ressources/boilerplate.fig"
+                            target="_blank">boilerplate.fig</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial section -->
+          <div class="bg-gradient-to-r from-amber-500 to-orange-600 pb-16 lg:relative lg:z-10 lg:pb-0">
+            <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
+              <div class="relative lg:-my-8">
+                <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
+                <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:h-full lg:p-0">
+                  <div
+                    class="aspect-w-10 aspect-h-6 overflow-hidden rounded-xl shadow-xl sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
+                    <img class="object-cover lg:h-full lg:w-full"
+                      src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
+                      alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="mt-12 lg:col-span-2 lg:m-0 lg:pl-8">
+                <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20">
+                  <blockquote>
+                    <div>
+                      <svg class="h-12 w-12 text-white opacity-25" fill="currentColor" viewBox="0 0 32 32"
+                        aria-hidden="true">
+                        <path
+                          d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                      </svg>
+                      <p class="mt-6 text-2xl font-medium text-white"><strong>Let use me, copy-paste me... I'm a
+                          template.</strong> <br /> <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc
+                        urna, sit.</p>
+                    </div>
+                    <footer class="mt-6">
+                      <p class="text-base font-medium text-white">Judith Black</p>
+                      <p class="text-base font-medium text-orange-100">CEO at PureInsights</p>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog section -->
+          <div class="relative bg-gray-50 py-16 sm:py-24 lg:py-32">
+            <div class="relative">
+              <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+                <h2 class="text-lg font-semibold text-orange-600">Templates</h2>
+                <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">These sections are just
+                  templates</p>
+                <p class="mx-auto mt-5 max-w-prose text-xl text-gray-400">Phasellus lorem quam molestie id quisque
+                  diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend condimentum id
+                  viverra nulla.</p>
+              </div>
+              <div
+                class="mx-auto mt-12 grid max-w-md gap-8 px-4 sm:max-w-lg sm:px-6 lg:max-w-7xl lg:grid-cols-3 lg:px-8">
+
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                  <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover"
+                      src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+                      alt="">
+                  </div>
+
+                  <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                    <div class="flex-1">
+                      <p class="text-sm font-medium text-orange-600">
+                        <a href="#" class="hover:underline">Article</a>
+                      </p>
+                      <a href="#" class="mt-2 block">
+                        <p class="text-xl font-semibold text-gray-800">This is just an article title</p>
+                        <p class="mt-3 text-base text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum
+                          eos quis dolorum.</p>
+                      </a>
+                    </div>
+                    <div class="mt-6 flex items-center">
+                      <div class="flex-shrink-0">
+                        <a href="#">
+                          <img class="h-10 w-10 rounded-full"
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                            alt="Tom Cook">
+                        </a>
+                      </div>
+                      <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-800">
+                          <a href="#" class="hover:underline">Tom Cook</a>
+                        </p>
+                        <div class="flex space-x-1 text-sm text-gray-400">
+                          <time datetime="2020-03-16">Mar 16, 2020</time>
+                          <span aria-hidden="true">&middot;</span>
+                          <span>6 min read</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                  <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover"
+                      src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+                      alt="">
+                  </div>
+                  <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                    <div class="flex-1">
+                      <p class="text-sm font-medium text-orange-600">
+                        <a href="#" class="hover:underline">Video</a>
+                      </p>
+                      <a href="#" class="mt-2 block">
+                        <p class="text-xl font-semibold text-gray-800">This is just another title</p>
+                        <p class="mt-3 text-base text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora
+                          aut inventore optio animi., tempore temporibus quo laudantium.</p>
+                      </a>
+                    </div>
+                    <div class="mt-6 flex items-center">
+                      <div class="flex-shrink-0">
+                        <a href="#">
+                          <img class="h-10 w-10 rounded-full"
+                            src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                            alt="Brenna Goyette">
+                        </a>
+                      </div>
+                      <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-800">
+                          <a href="#" class="hover:underline">Brenna Goyette</a>
+                        </p>
+                        <div class="flex space-x-1 text-sm text-gray-400">
+                          <time datetime="2020-03-10">Mar 10, 2020</time>
+                          <span aria-hidden="true">&middot;</span>
+                          <span>4 min read</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                  <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover"
+                      src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+                      alt="">
+                  </div>
+                  <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                    <div class="flex-1">
+                      <p class="text-sm font-medium text-orange-600">
+                        <a href="#" class="hover:underline">Case Study</a>
+                      </p>
+                      <a href="#" class="mt-2 block">
+                        <p class="text-xl font-semibold text-gray-800">Yep, you guessed... a title</p>
+                        <p class="mt-3 text-base text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed
+                          excepturi cumque corporis perferendis hic.</p>
+                      </a>
+                    </div>
+                    <div class="mt-6 flex items-center">
+                      <div class="flex-shrink-0">
+                        <a href="#">
+                          <img class="h-10 w-10 rounded-full"
+                            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                            alt="Daniela Metz">
+                        </a>
+                      </div>
+                      <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-800">
+                          <a href="#" class="hover:underline">Daniela Metz</a>
+                        </p>
+                        <div class="flex space-x-1 text-sm text-gray-400">
+                          <time datetime="2020-02-12">Feb 12, 2020</time>
+                          <span aria-hidden="true">&middot;</span>
+                          <span>11 min read</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="relative bg-gray-900">
+            <div class="relative h-56 bg-primary-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+              <img class="h-full w-full object-cover"
+                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+                alt="">
+              <div aria-hidden="true"
+                class="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-600 mix-blend-multiply"></div>
+            </div>
+            <div class="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+              <div class="md:ml-auto md:w-1/2 md:pl-10">
+                <h2 class="text-lg font-semibold text-gray-300">Award winning support</h2>
+                <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">We’re here to help</p>
+                <p class="mt-3 text-lg text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+                  egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.
+                  Aliquet amet volutpat quisque ut interdum tincidunt duis.</p>
+                <div class="mt-8">
+                  <div class="inline-flex rounded-md shadow">
+                    <a href="#"
+                      class="inline-flex items-centernpm install -D @tailwindcss/aspect-ratio justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-gray-800 hover:bg-gray-50">
+                      Visit the help center
+                      <!-- Heroicon name: mini/arrow-top-right-on-square -->
+                      <svg class="-mr-1 ml-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+                          clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                          d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

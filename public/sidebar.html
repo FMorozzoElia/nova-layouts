@@ -1,0 +1,333 @@
+<!doctype html>
+<html class="h-full bg-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="./dist/img/favicon.png">
+  <link href="dist/css/style.css" rel="stylesheet">
+  <link href="staticwebassets/css/nova.css" rel="stylesheet">
+</head>
+<body class="h-full overflow-hidden">
+    <div class="overflow-y-auto">
+    <div class="sidebar">
+      <nav class="nav nav-vertical nav-level-1 primary">
+        <a href="#" class="mb-4">
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA0IiBoZWlnaHQ9IjMzIiB2aWV3Qm94PSIwIDAgMTA0IDMzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNDIuNzMwNyAyMi45OTdWOS4xMDgwNEg0NS42MjMyVjExLjA3Nkg0NS42NTMzQzQ2LjAxODcgMTAuNDk1NCA0Ni41OTExIDkuOTc1MTYgNDcuMzc0NSA5LjUxMTQ0QzQ4LjE1MDQgOS4wNDc3MiA0OS4wMTI4IDguODE3NzUgNDkuOTU4MiA4LjgxNzc1QzUxLjAxNjUgOC44MTc3NSA1MS45NjE4IDkuMDYyOCA1Mi43OTA0IDkuNTU2NjhDNTMuNjE5IDEwLjA0NjggNTQuMjcwNSAxMC43NTE4IDU0Ljc0MTMgMTEuNjY3OUM1NS4yMTIxIDEyLjU4NCA1NS40NDk0IDEzLjY1ODUgNTUuNDQ5NCAxNC44OTUxVjIyLjk5N0g1Mi41NTY5VjE0Ljg5NTFDNTIuNTU2OSAxMy44OTIzIDUyLjI2MzEgMTMuMDg1NSA1MS42NzU2IDEyLjQ3ODVDNTEuMDg4IDExLjg3MTUgNTAuMzE5NyAxMS41NjYxIDQ5LjM3ODIgMTEuNTY2MUM0OC4yNzg0IDExLjU2NjEgNDcuMzc4MyAxMS45MjgxIDQ2LjY3NCAxMi42NTE5QzQ1Ljk2OTcgMTMuMzc1OCA0NS42MTk0IDE0LjMxNDUgNDUuNjE5NCAxNS40NzE5VjIyLjk5N0g0Mi43MzA3WiIgZmlsbD0iIzM5NEQ1NSIvPgo8cGF0aCBkPSJNNjEuNjc4NyAyMi4zMzM1QzYwLjU3MTUgMjEuNjk2MyA1OS42OTc3IDIwLjgyNTQgNTkuMDYxMiAxOS43MTMzQzU4LjQyNDcgMTguNjA0OSA1OC4xMDgzIDE3LjM4MzQgNTguMTA4MyAxNi4wNTI1QzU4LjEwODMgMTQuNzIxNyA1OC40MjQ3IDEzLjUwMDIgNTkuMDYxMiAxMi4zOTE4QzU5LjY5NzcgMTEuMjgzNCA2MC41Njc3IDEwLjQwODcgNjEuNjc4NyA5Ljc3MTU4QzYyLjc4OTggOS4xMzQ0MyA2NC4wMDYzIDguODE3NzUgNjUuMzM1OCA4LjgxNzc1QzY2LjY2NTMgOC44MTc3NSA2Ny44ODU1IDkuMTM0NDMgNjguOTkyOCA5Ljc3MTU4QzcwLjEwMDEgMTAuNDA4NyA3MC45NzM5IDExLjI3OTYgNzEuNjEwMyAxMi4zOTE4QzcyLjI0NjggMTMuNTAwMiA3Mi41NjMyIDE0LjcyMTcgNzIuNTYzMiAxNi4wNTI1QzcyLjU2MzIgMTcuMzgzNCA3Mi4yNDY4IDE4LjYwNDkgNzEuNjEwMyAxOS43MTMzQzcwLjk3MzkgMjAuODIxNyA3MC4xMDM4IDIxLjY5NjMgNjguOTkyOCAyMi4zMzM1QzY3Ljg4NTUgMjIuOTcwNiA2Ni42NjUzIDIzLjI4NzMgNjUuMzM1OCAyMy4yODczQzY0LjAwNjMgMjMuMjg3MyA2Mi43ODYgMjIuOTcwNiA2MS42Nzg3IDIyLjMzMzVaTTY3LjU0NjYgMTkuOTYyMUM2OC4yMTMyIDE5LjU3NzUgNjguNzMyOSAxOS4wNDIyIDY5LjEwOTYgMTguMzU2QzY5LjQ4NjIgMTcuNjY5OSA2OS42NzQ1IDE2LjkwNDYgNjkuNjc0NSAxNi4wNTYzQzY5LjY3NDUgMTUuMjA4IDY5LjQ4NjIgMTQuNDM4OSA2OS4xMDk2IDEzLjc1NjVDNjguNzMyOSAxMy4wNzA0IDY4LjIxMzIgMTIuNTM1IDY3LjU0NjYgMTIuMTUwNUM2Ni44Nzk5IDExLjc2NTkgNjYuMTQ1NSAxMS41Njk5IDY1LjMzNTggMTEuNTY5OUM2NC41MjYgMTEuNTY5OSA2My43ODc4IDExLjc2MjIgNjMuMTI1IDEyLjE1MDVDNjIuNDU4NCAxMi41MzUgNjEuOTM4NiAxMy4wNzA0IDYxLjU2MiAxMy43NTY1QzYxLjE4NTQgMTQuNDQyNyA2MC45OTcgMTUuMjA4IDYwLjk5NyAxNi4wNTYzQzYwLjk5NyAxNi45MDQ2IDYxLjE4NTQgMTcuNjczNiA2MS41NjIgMTguMzU2QzYxLjkzODYgMTkuMDQyMiA2Mi40NTg0IDE5LjU3NzUgNjMuMTI1IDE5Ljk2MjFDNjMuNzkxNiAyMC4zNDY2IDY0LjUyNiAyMC41NDI3IDY1LjMzNTggMjAuNTQyN0M2Ni4xNDU1IDIwLjU0MjcgNjYuODgzNyAyMC4zNTA0IDY3LjU0NjYgMTkuOTYyMVoiIGZpbGw9IiMzOTRENTUiLz4KPHBhdGggZD0iTTg0Ljg0NSA5LjEzMDY3TDgwLjkyMDYgMTkuMjQ1OEM4MC44NzE2IDE5LjM3MzkgODAuNjg3MSAxOS4zNzM5IDgwLjYzODEgMTkuMjQ1OEw3Ni44MjY2IDkuMTMwNjdDNzYuODI2NiA5LjEzMDY3IDc2LjgwNzggOS4xMDgwNSA3Ni43OTI4IDkuMTA4MDVINzMuNzUzNEM3My43MjcgOS4xMDgwNSA3My43MDgyIDkuMTM0NDQgNzMuNzE5NSA5LjE2MDgzTDc4LjU2NjcgMjEuNDE3M0M3OC44NjQyIDIyLjE3MTMgNzkuNDk2OSAyMi43ODIxIDgwLjI5MTYgMjIuOTQ4QzgxLjQzNjUgMjMuMTg5MyA4Mi41NDc2IDIyLjU2MzQgODIuOTU4MSAyMS41MTkxTDg3Ljg0MjkgOS4xNTcwNkM4Ny44NTQyIDkuMTMwNjcgODcuODM1NCA5LjEwNDI4IDg3LjgwOSA5LjEwNDI4SDg0Ljg4MjdDODQuODgyNyA5LjEwNDI4IDg0Ljg1MjUgOS4xMTU1OSA4NC44NDg4IDkuMTI2OUw4NC44NDUgOS4xMzA2N1oiIGZpbGw9IiMzOTRENTUiLz4KPHBhdGggZD0iTTEwMS4xMDggOS4xMDgwNFYxMC42NjUxQzEwMC43MzUgMTAuMzI5NSAxMDAuMzI4IDEwLjAyNzkgOTkuODc2MSA5Ljc3MTU4Qzk4Ljc2ODggOS4xMzQ0MyA5Ny41NDg1IDguODE3NzUgOTYuMjE5MSA4LjgxNzc1Qzk0Ljg4OTYgOC44MTc3NSA5My42NjkzIDkuMTM0NDMgOTIuNTYyIDkuNzcxNThDOTEuNDU0NyAxMC40MDg3IDkwLjU4MSAxMS4yNzk2IDg5Ljk0NDUgMTIuMzkxOEM4OS4zMDggMTMuNTAwMiA4OC45OTE2IDE0LjcyMTcgODguOTkxNiAxNi4wNTI1Qzg4Ljk5MTYgMTcuMzgzNCA4OS4zMDggMTguNjA0OSA4OS45NDQ1IDE5LjcxMzNDOTAuNTgxIDIwLjgyMTcgOTEuNDUxIDIxLjY5NjMgOTIuNTYyIDIyLjMzMzVDOTMuNjY5MyAyMi45NzA2IDk0Ljg4OTYgMjMuMjg3MyA5Ni4yMTkxIDIzLjI4NzNDOTcuNTQ4NSAyMy4yODczIDk4Ljc2ODggMjIuOTcwNiA5OS44NzYxIDIyLjMzMzVDMTAwLjMyNCAyMi4wNzcxIDEwMC43MzUgMjEuNzc1NSAxMDEuMTA4IDIxLjQzOTlWMjMuMDAwOEgxMDRWOS4xMDgwNEgxMDEuMTA4Wk05OS45OTI4IDE4LjM1MjNDOTkuNjE2MiAxOS4wMzg0IDk5LjA5NjUgMTkuNTczOCA5OC40Mjk4IDE5Ljk1ODNDOTcuNzYzMiAyMC4zNDI5IDk3LjAyODggMjAuNTM4OSA5Ni4yMTkxIDIwLjUzODlDOTUuNDA5MyAyMC41Mzg5IDk0LjY3MTEgMjAuMzQ2NiA5NC4wMDgzIDE5Ljk1ODNDOTMuMzQxNiAxOS41NzM4IDkyLjgyMTkgMTkuMDM4NCA5Mi40NDUzIDE4LjM1MjNDOTIuMDY4NiAxNy42NjYxIDkxLjg4MDMgMTYuOTAwOCA5MS44ODAzIDE2LjA1MjVDOTEuODgwMyAxNS4yMDQyIDkyLjA2ODYgMTQuNDM1MiA5Mi40NDUzIDEzLjc1MjhDOTIuODIxOSAxMy4wNjY2IDkzLjM0MTYgMTIuNTMxMyA5NC4wMDgzIDEyLjE0NjdDOTQuNjc0OSAxMS43NjIyIDk1LjQwOTMgMTEuNTY2MSA5Ni4yMTkxIDExLjU2NjFDOTcuMDI4OCAxMS41NjYxIDk3Ljc2NyAxMS43NTg0IDk4LjQyOTggMTIuMTQ2N0M5OS4wOTY1IDEyLjUzMTMgOTkuNjE2MiAxMy4wNjY2IDk5Ljk5MjggMTMuNzUyOEMxMDAuMzY5IDE0LjQzODkgMTAwLjU1OCAxNS4yMDQyIDEwMC41NTggMTYuMDUyNUMxMDAuNTU4IDE2LjkwMDggMTAwLjM2OSAxNy42Njk5IDk5Ljk5MjggMTguMzUyM1oiIGZpbGw9IiMzOTRENTUiLz4KPHBhdGggZD0iTTIxLjcwNTQgMS4xMzAzN0wxNy40MTY2IDEwLjc0MzVDMTcuMDg1OCAxMS40ODM1IDE3LjA5MTggMTIuMzYyOSAxNy41MjkxIDEzLjA0NjlDMTguMTU3NCAxNC4wMzQgMTkuMzgxOCAxNC4zOTA0IDIwLjQxNTMgMTMuOTUzNEwzMi40NTY1IDguODg3MzFMMjkuODA0MSA2Ljk3MzYxTDIwLjYxNSAxMC45MDcxQzIwLjQ4OTIgMTAuOTYxOCAyMC4zNjAxIDEwLjgyOTkgMjAuNDE3NSAxMC43MDUyTDI0LjA3OTMgMi44NDMxNUwyMS43MDU0IDEuMTMwMzdaIiBmaWxsPSIjRjA4MDFBIi8+CjxwYXRoIGQ9Ik0zLjYxNjMzIDcuNzczNjVMMTEuMzk3OSAxNC44NjI2QzExLjk5NjcgMTUuNDA5IDEyLjgzMzUgMTUuNjc5MiAxMy42MjAyIDE1LjQ3ODdDMTQuNzU0NiAxNS4xOTE5IDE1LjQ3NzIgMTQuMTQxMyAxNS4zODY3IDEzLjAyMjhMMTQuMzU1NCAwTDExLjcwNiAxLjkxNzgyTDEyLjU1NyAxMS44NzcxQzEyLjU2OTQgMTIuMDEzOCAxMi40MDM2IDEyLjA5NSAxMi4zMDMzIDEyLjAwMTRMNS45ODc1OSA2LjA1NzE4TDMuNjE2MzMgNy43NzM2NVoiIGZpbGw9IiNGMDgwMUEiLz4KPHBhdGggZD0iTTIyLjc1MjkgMzIuMzgyNkwyMC41NzAzIDIyLjA4NDlDMjAuNDAyOCAyMS4yOTE4IDE5Ljg4MDkgMjAuNTg0IDE5LjEyNTEgMjAuMjg3OEMxOC4wMzY1IDE5Ljg1ODcgMTYuODM2NiAyMC4yOTAzIDE2LjI1NzUgMjEuMjUxNEw5LjQ5NTYxIDMyLjQyODhMMTIuNzY2MyAzMi40MTc0TDE3Ljg4NjkgMjMuODMzQzE3Ljk1NjYgMjMuNzE0OCAxOC4xMzg1IDIzLjc0NTYgMTguMTY1NCAyMy44ODAyTDE5LjgyNTYgMzIuMzkyOEwyMi43NTI5IDMyLjM4MjZaIiBmaWxsPSIjRjA4MDFBIi8+CjxwYXRoIGQ9Ik00LjA5NzcgMjYuOTg1TDEzLjIzNDggMjEuNzU4MkMxMy45Mzg3IDIxLjM1NjMgMTQuNDUzIDIwLjY0MyAxNC41MDQgMTkuODMyN0MxNC41Nzk2IDE4LjY2NTEgMTMuODAxOCAxNy42NTQ2IDEyLjcwOTcgMTcuMzk3MUwwIDE0LjM3NjhMMS4wMTA5NCAxNy40ODc0TDEwLjc0OTkgMTkuNzM3OEMxMC44ODM4IDE5Ljc2OCAxMC45MTAxIDE5Ljk1MDcgMTAuNzkwMiAyMC4wMTc0TDMuMTkyOSAyNC4yMDExTDQuMDk3NyAyNi45ODVaIiBmaWxsPSIjRjA4MDFBIi8+CjxwYXRoIGQ9Ik0zMy43NjQxIDE2LjMwNjdMMjMuMjk5NCAxNS4xNjg3QzIyLjQ5MzYgMTUuMDgwNCAyMS42NTgzIDE1LjM1NTUgMjEuMTQxMSAxNS45ODEzQzIwLjM5MzkgMTYuODgxNyAyMC40Mjk3IDE4LjE1NjQgMjEuMTYyMyAxOS4wMDY0TDI5LjY3MzIgMjguOTE3MUwzMC42ODI0IDI1LjgwNkwyNC4xMjMzIDE4LjI2MzVDMjQuMDMyNyAxOC4xNjA0IDI0LjExODggMTcuOTk3MSAyNC4yNTUgMTguMDEzNkwzMi44NjA4IDE5LjA5MTJMMzMuNzY0MSAxNi4zMDY3WiIgZmlsbD0iI0YwODAxQSIvPgo8L3N2Zz4K" alt="">
+        </a>
+        
+        <a class="is-active stack gutter-x-3" href="#" title="Home">
+          <i class="icon icon-md icon-home"></i>        
+          <span>Home</span>
+        </a>
+        <a class="stack gutter-x-3" href="#" title="Home">
+          <i class="icon icon-md icon-gauge"></i>        
+          <span>Home</span>
+        </a>
+        <a class="stack gutter-x-3" href="#" title="Projects">
+          <i class="icon icon-md icon-stack-2"></i>        
+          <span>Projects</span>
+        </a>
+        <a class="stack gutter-x-3" href="#" title="Tasks">
+          <i class="icon icon-md icon-checklist"></i>        
+          <span>Tasks</span>
+        </a>
+        <a class="stack gutter-x-3" href="#" title="Reporting">
+          <i class="icon icon-md icon-chart-pie"></i>        
+          <span>Reporting</span>
+        </a>
+        <a class="stack gutter-x-3" href="#" title="Users">
+          <i class="icon icon-md icon-users"></i>        
+          <span>Users</span>
+        </a>
+        <a class="stack gutter-x-3" href="#" title="Documents">
+          <i class="icon icon-md icon-files"></i>        
+          <span>Documents</span>
+        </a>
+        
+      </nav>
+      
+      <nav class="mt-auto nav nav-vertical nav-level-1 primary border-t pt-3" style="border-color:var(--color-neutral-border)">
+        <a href="#" class="stack gutter-x-3" title="Settings">
+          <i class="icon icon-md icon-settings"></i>        
+          <span>Settings</span>
+        </a>
+        
+        <a class="stack gutter-x-3" href="#" title="Help">
+          <i class="icon icon-md icon-headset"></i>        
+          <span>Help</span>
+        </a>
+        
+        <div class="stack gutter-x-3 px-3 py-2">
+          <div class="avatar avatar-md neutral">
+            <img alt="Rosalee Melvin" class="avatar-img img" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=faces&amp;fit=crop&amp;h=200&amp;w=200&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ">
+          </div>
+          <div>
+            <h3 class="text-sm font-medium" style="color:var(--color-neutral-fg)">Rosalee Melvin</h3>
+            <p class="text-sm hover:text-gray-800" title="view profile" style="color:var(--color-neutral-fg-muted)"><a href="#">View Profile</a></p>
+          </div>
+          <a href="#" title="logout" class="ml-auto hover:text-red-500" style="color:var(--color-neutral-fg-muted)">
+            <i class=" icon icon-md icon-logout"></i>        
+          </a>
+        </div>
+        
+        
+      </nav>
+    </div>
+  </div>
+
+
+
+
+  <div class="flex h-full">
+    <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+    <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+      <!--
+        Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+  
+        Entering: "transition-opacity ease-linear duration-300"
+          From: "opacity-0"
+          To: "opacity-100"
+        Leaving: "transition-opacity ease-linear duration-300"
+          From: "opacity-100"
+          To: "opacity-0"
+      -->
+      <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  
+      <div class="fixed inset-0 z-40 flex">
+        <!--
+          Off-canvas menu, show/hide based on off-canvas menu state.
+  
+          Entering: "transition ease-in-out duration-300 transform"
+            From: "-translate-x-full"
+            To: "translate-x-0"
+          Leaving: "transition ease-in-out duration-300 transform"
+            From: "translate-x-0"
+            To: "-translate-x-full"
+        -->
+        <div class="relative flex w-full max-w-xs flex-1 flex-col bg-white focus:outline-none">
+          <!--
+            Close button, show/hide based on off-canvas menu state.
+  
+            Entering: "ease-in-out duration-300"
+              From: "opacity-0"
+              To: "opacity-100"
+            Leaving: "ease-in-out duration-300"
+              From: "opacity-100"
+              To: "opacity-0"
+          -->
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button type="button" class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-200">
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x-mark -->
+              <svg class="h-6 w-6 text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+  
+          <div class="h-0 flex-1 overflow-y-auto pt-5 pb-4">
+            <div class="flex flex-shrink-0 items-center px-4">
+              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=pink&shade=500" alt="Your Company">
+            </div>
+            <nav aria-label="Sidebar" class="mt-5">
+              <div class="space-y-1 px-2">
+                <!-- Current: "bg-gray-100 text-gray-800", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <!--
+                    Heroicon name: outline/home
+  
+                    Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
+                  -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                  Home
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <!-- Heroicon name: outline/calendar -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                  </svg>
+                  Calendar
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <!-- Heroicon name: outline/user-group -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                  </svg>
+                  Teams
+                </a>
+  
+                <a href="#" class="bg-gray-100 text-gray-800 group flex items-center px-2 py-2 text-base font-medium rounded-md" aria-current="page">
+                  <!-- Heroicon name: outline/magnifying-glass-circle -->
+                  <svg class="text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Directory
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <!-- Heroicon name: outline/megaphone -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+                  </svg>
+                  Announcements
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <!-- Heroicon name: outline/map -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                  </svg>
+                  Office Map
+                </a>
+              </div>
+              <hr class="my-5 border-t border-gray-200" aria-hidden="true">
+              <div class="space-y-1 px-2">
+                <a href="#" class="group flex items-center rounded-md px-2 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                  <!-- Heroicon name: outline/squares-plus -->
+                  <svg class="mr-4 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                  Apps
+                </a>
+  
+                <a href="#" class="group flex items-center rounded-md px-2 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                  <!-- Heroicon name: outline/cog -->
+                  <svg class="mr-4 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" />
+                  </svg>
+                  Settings
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="flex flex-shrink-0 border-t border-gray-200 p-4">
+            <a href="#" class="group block flex-shrink-0">
+              <div class="flex items-center">
+                <div>
+                  <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </div>
+                <div class="ml-3">
+                  <p class="text-base font-medium text-gray-800 group-hover:text-gray-900">Tom Cook</p>
+                  <p class="text-sm font-medium text-gray-400 group-hover:text-gray-700">View profile</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+  
+        <div class="w-14 flex-shrink-0" aria-hidden="true">
+          <!-- Force sidebar to shrink to fit close icon -->
+        </div>
+      </div>
+    </div>
+  
+    <!-- Static sidebar for desktop -->
+    <div class="hidden lg:flex lg:flex-shrink-0">
+      <div class="flex w-64 flex-col">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+        <div class="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-gray-100">
+          <div class="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
+            <div class="flex flex-shrink-0 items-center px-4">
+              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=pink&shade=500" alt="Your Company">
+            </div>
+            <nav class="mt-5 flex-1" aria-label="Sidebar">
+              <div class="space-y-1 px-2">
+                <!-- Current: "bg-gray-200 text-gray-800", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <!--
+                    Heroicon name: outline/home
+  
+                    Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
+                  -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                  Home
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <!-- Heroicon name: outline/calendar -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                  </svg>
+                  Calendar
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <!-- Heroicon name: outline/user-group -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                  </svg>
+                  Teams
+                </a>
+  
+                <a href="#" class="bg-gray-200 text-gray-800 group flex items-center px-2 py-2 text-sm font-medium rounded-md" aria-current="page">
+                  <!-- Heroicon name: outline/magnifying-glass-circle -->
+                  <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Directory
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <!-- Heroicon name: outline/megaphone -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+                  </svg>
+                  Announcements
+                </a>
+  
+                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                  <!-- Heroicon name: outline/map -->
+                  <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                  </svg>
+                  Office Map
+                </a>
+              </div>
+              <hr class="my-5 border-t border-gray-200" aria-hidden="true">
+              <div class="flex-1 space-y-1 px-2">
+                <a href="#" class="group flex items-center rounded-md px-2 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                  <!-- Heroicon name: outline/squares-plus -->
+                  <svg class="mr-3 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                  Apps
+                </a>
+  
+                <a href="#" class="group flex items-center rounded-md px-2 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">
+                  <!-- Heroicon name: outline/cog -->
+                  <svg class="mr-3 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" />
+                  </svg>
+                  Settings
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="flex flex-shrink-0 border-t border-gray-200 p-4">
+            <a href="#" class="group block w-full flex-shrink-0">
+              <div class="flex items-center">
+                <div>
+                  <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </div>
+                <div class="ml-3">
+                  <p class="text-sm font-medium text-gray-800 group-hover:text-gray-900">Tom Cook</p>
+                  <p class="text-xs font-medium text-gray-400 group-hover:text-gray-700">View profile</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>
